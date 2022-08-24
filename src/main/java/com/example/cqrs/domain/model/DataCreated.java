@@ -5,7 +5,7 @@ import lombok.Builder;
 
 @lombok.Data
 @Builder
-public class Data{
+public class DataCreated implements Event {
 	private String id;
 	private String value;
 }

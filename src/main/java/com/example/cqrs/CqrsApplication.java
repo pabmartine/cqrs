@@ -4,12 +4,15 @@ import com.example.cqrs.application.data.AddDataCommand;
 import com.example.cqrs.application.data.GetDataQuery;
 import com.example.cqrs.domain.commandbus.CommandBus;
 import com.example.cqrs.domain.model.Data;
+import com.example.cqrs.domain.model.DataCreated;
 import com.example.cqrs.domain.querybus.QueryBus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.Optional;
 
 @Slf4j
 @SpringBootApplication
@@ -28,7 +31,7 @@ public class CqrsApplication implements CommandLineRunner {
 		String dataValue = "abc";
 
 		log.info("**** First query ****");
-		Data data = queryBus.handle(GetDataQuery.builder().id(dataId).build());
+		DataCreated data = queryBus.handle(GetDataQuery.builder().id(dataId).build());
 		log.info(data != null ? "Found: " + data.getId() : "Not Found");
 
 		log.info("**** Adding ****");

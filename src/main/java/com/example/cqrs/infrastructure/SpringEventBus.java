@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.time.format.DateTimeFormatter;
 
 @Slf4j
-@Component("SpringEventBus")
+@Component
 @Primary
 public class SpringEventBus implements EventBus {
 
