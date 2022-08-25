@@ -1,11 +1,11 @@
 package com.example.cqrs.domain.model;
 
-import com.example.cqrs.domain.eventbus.Event;
+import com.example.cqrs.domain.bus.Command;
 import lombok.Builder;
 
 @lombok.Data
 @Builder
-public class Data{
+public class Data extends Command {
 	private String id;
 	private String value;
 }
