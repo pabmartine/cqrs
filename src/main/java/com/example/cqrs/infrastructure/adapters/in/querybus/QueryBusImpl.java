@@ -1,8 +1,7 @@
-package com.example.cqrs.config;
+package com.example.cqrs.infrastructure.adapters.in.querybus;
 
 import com.example.cqrs.domain.bus.Query;
-import com.example.cqrs.domain.ports.bus.querybus.QueryBus;
-import com.example.cqrs.domain.ports.bus.querybus.QueryHandler;
+import com.example.cqrs.domain.ports.bus.QueryBus;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -14,11 +13,11 @@ import java.util.Map;
 
 @Component
 @Primary
-public class SpringQueryBus implements QueryBus {
+public class QueryBusImpl implements QueryBus {
 
-	private Map<Class, QueryHandler> handlers;
+	private Map<Class, QueryBusHandler> handlers;
 
-	public SpringQueryBus(List<QueryHandler> queryHandlerImplementations) {
+	public QueryBusImpl(List<QueryBusHandler> queryHandlerImplementations) {
 		this.handlers = new HashMap<>();
 		queryHandlerImplementations.forEach(queryHandler -> {
 			Class queryClass = getQueryClass(queryHandler);
@@ -34,7 +33,7 @@ public class SpringQueryBus implements QueryBus {
 		return (T) handlers.get(query.getClass()).handle(query);
 	}
 
-	private Class<?> getQueryClass(QueryHandler handler) {
+	private Class<?> getQueryClass(QueryBusHandler handler) {
 		Type commandInterface = ((ParameterizedType) handler.getClass().getGenericInterfaces()[0]).getActualTypeArguments()[1];
 		return getClass(commandInterface.getTypeName());
 	}

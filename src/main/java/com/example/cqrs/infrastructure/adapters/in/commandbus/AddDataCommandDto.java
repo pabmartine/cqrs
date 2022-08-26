@@ -1,4 +1,4 @@
-package com.example.cqrs.infrastructure.adapters.in.commandhandler;
+package com.example.cqrs.infrastructure.adapters.in.commandbus;
 
 import com.example.cqrs.domain.bus.Command;
 import lombok.Builder;
@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class AddDataCommand extends Command {
+public class AddDataCommandDto extends Command {
 
 	private String id;
 	private String value;

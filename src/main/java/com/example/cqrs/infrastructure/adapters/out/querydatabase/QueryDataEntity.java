@@ -5,7 +5,7 @@ import lombok.Builder;
 
 @lombok.Data
 @Builder
-public class QueryData implements Event {
+public class QueryDataEntity implements Event {
 	private String id;
 	private String value;
 }

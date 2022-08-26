@@ -1,4 +1,4 @@
-package com.example.cqrs.domain.ports.bus.eventbus;
+package com.example.cqrs.domain.ports.bus;
 
 import com.example.cqrs.domain.bus.Event;
 

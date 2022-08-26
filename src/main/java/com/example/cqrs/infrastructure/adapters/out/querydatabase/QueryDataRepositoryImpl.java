@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public class QueryDataRepositoryImpl implements QueryDataRepository {
 
-	List<QueryData> dataList;
+	List<QueryDataEntity> dataList;
 
 	public QueryDataRepositoryImpl() {
 		this.dataList = new ArrayList<>();
@@ -19,7 +19,7 @@ public class QueryDataRepositoryImpl implements QueryDataRepository {
 
 	@Override
 	public void save(Data data) {
-		dataList.add(QueryData.builder().id(data.getId()).value(data.getValue()).build());
+		dataList.add(QueryDataEntity.builder().id(data.getId()).value(data.getValue()).build());
 	}
 
 	@Override

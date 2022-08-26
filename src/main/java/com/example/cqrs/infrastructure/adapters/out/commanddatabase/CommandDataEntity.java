@@ -4,7 +4,7 @@ import lombok.Builder;
 
 @lombok.Data
 @Builder
-public class CommandData {
+public class CommandDataEntity {
 	private String id;
 	private String value;
 }

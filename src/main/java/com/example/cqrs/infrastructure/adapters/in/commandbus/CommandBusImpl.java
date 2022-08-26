@@ -1,8 +1,7 @@
-package com.example.cqrs.config;
+package com.example.cqrs.infrastructure.adapters.in.commandbus;
 
 import com.example.cqrs.domain.bus.Command;
-import com.example.cqrs.domain.ports.bus.commandbus.CommandBus;
-import com.example.cqrs.domain.ports.bus.commandbus.CommandHandler;
+import com.example.cqrs.domain.ports.bus.CommandBus;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -14,11 +13,11 @@ import java.util.Map;
 
 @Component
 @Primary
-public class SpringCommandBus implements CommandBus {
+public class CommandBusImpl implements CommandBus {
 
-	private Map<Class, CommandHandler> handlers;
+	private Map<Class, CommandBusHandler> handlers;
 
-	public SpringCommandBus(List<CommandHandler> commandHandlerImplementations) {
+	public CommandBusImpl(List<CommandBusHandler> commandHandlerImplementations) {
 		this.handlers = new HashMap<>();
 		commandHandlerImplementations.forEach(commandHandler -> {
 			Class<?> commandClass = getCommandClass(commandHandler);
@@ -34,7 +33,7 @@ public class SpringCommandBus implements CommandBus {
 		handlers.get(command.getClass()).handle(command);
 	}
 
-	private Class<?> getCommandClass(CommandHandler handler) {
+	private Class<?> getCommandClass(CommandBusHandler handler) {
 		Type commandInterface = ((ParameterizedType) handler.getClass().getGenericInterfaces()[0]).getActualTypeArguments()[0];
 		return getClass(commandInterface.getTypeName());
 	}

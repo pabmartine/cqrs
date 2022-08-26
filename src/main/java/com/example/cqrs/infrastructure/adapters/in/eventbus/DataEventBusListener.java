@@ -1,4 +1,4 @@
-package com.example.cqrs.infrastructure.adapters.in.eventbuslistener;
+package com.example.cqrs.infrastructure.adapters.in.eventbus;
 
 import com.example.cqrs.domain.events.DataEvent;
 import com.example.cqrs.domain.model.Data;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class DataEventBusListener extends MySpringEventBusListener<DataEvent> {
+public class DataEventBusListener extends EventBusListener<DataEvent> {
 
 	@Autowired
 	private AddQueryDataUseCase addQueryDataUseCase;

@@ -1,10 +1,10 @@
 package com.example.cqrs;
 
-import com.example.cqrs.infrastructure.adapters.in.commandhandler.AddDataCommand;
-import com.example.cqrs.infrastructure.adapters.in.queryhandler.GetDataQuery;
-import com.example.cqrs.domain.ports.bus.commandbus.CommandBus;
+import com.example.cqrs.infrastructure.adapters.in.commandbus.AddDataCommandDto;
+import com.example.cqrs.infrastructure.adapters.in.querybus.GetDataQueryDto;
+import com.example.cqrs.domain.ports.bus.CommandBus;
 import com.example.cqrs.domain.model.Data;
-import com.example.cqrs.domain.ports.bus.querybus.QueryBus;
+import com.example.cqrs.domain.ports.bus.QueryBus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -28,14 +28,14 @@ public class CqrsApplication implements CommandLineRunner {
 		String dataValue = "abc";
 
 		log.info("**** First query ****");
-		Data data = queryBus.handle(GetDataQuery.builder().id(dataId).build());
+		Data data = queryBus.handle(GetDataQueryDto.builder().id(dataId).build());
 		log.info(data != null ? "Found: " + data.getId() : "Not Found");
 
 		log.info("**** Adding ****");
-		commandBus.handle(AddDataCommand.builder().id(dataId).value(dataValue).build());
+		commandBus.handle(AddDataCommandDto.builder().id(dataId).value(dataValue).build());
 
 		log.info("**** Second query ****");
-		data = queryBus.handle(GetDataQuery.builder().id(dataId).build());
+		data = queryBus.handle(GetDataQueryDto.builder().id(dataId).build());
 		log.info(data != null ? "Found: " + data.getId() : "Not Found");
 
 	}

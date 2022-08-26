@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public class CommandRepositoryImpl implements CommandDataRepository {
 
-	List<CommandData> dataList;
+	List<CommandDataEntity> dataList;
 
 	public CommandRepositoryImpl() {
 		this.dataList = new ArrayList<>();
@@ -18,7 +18,7 @@ public class CommandRepositoryImpl implements CommandDataRepository {
 
 	@Override
 	public void save(Data data) {
-		dataList.add(CommandData.builder().id(data.getId()).value(data.getValue()).build());
+		dataList.add(CommandDataEntity.builder().id(data.getId()).value(data.getValue()).build());
 	}
 
 }

@@ -1,7 +1,7 @@
 package com.example.cqrs.application.usecase;
 
 import com.example.cqrs.domain.events.DataEvent;
-import com.example.cqrs.domain.ports.bus.eventbus.EventBus;
+import com.example.cqrs.domain.ports.bus.EventBus;
 import com.example.cqrs.domain.model.Data;
 import com.example.cqrs.domain.ports.repository.CommandDataRepository;
 import com.example.cqrs.domain.ports.usecase.AddCommandDataUseCase;
