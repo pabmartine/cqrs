@@ -1,6 +1,7 @@
 package com.example.cqrs.infrastructure.adapters.in.querybus;
 
 import com.example.cqrs.domain.bus.Query;
+import com.example.cqrs.domain.bus.QueryBusHandler;
 import com.example.cqrs.domain.ports.bus.QueryBus;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;

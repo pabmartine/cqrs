@@ -1,4 +1,4 @@
-package com.example.cqrs.infrastructure.adapters.in.commandbus;
+package com.example.cqrs.application.add;
 
 import com.example.cqrs.domain.bus.Command;
 import lombok.Builder;

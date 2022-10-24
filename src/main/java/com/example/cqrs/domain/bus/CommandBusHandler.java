@@ -1,4 +1,4 @@
-package com.example.cqrs.infrastructure.adapters.in.commandbus;
+package com.example.cqrs.domain.bus;
 
 import com.example.cqrs.domain.bus.Command;
 

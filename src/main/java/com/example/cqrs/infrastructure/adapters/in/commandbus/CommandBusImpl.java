@@ -1,6 +1,7 @@
 package com.example.cqrs.infrastructure.adapters.in.commandbus;
 
 import com.example.cqrs.domain.bus.Command;
+import com.example.cqrs.domain.bus.CommandBusHandler;
 import com.example.cqrs.domain.ports.bus.CommandBus;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.example.cqrs.application.usecase;
+package com.example.cqrs.application.add;
 
 import com.example.cqrs.domain.events.DataEvent;
 import com.example.cqrs.domain.ports.bus.EventBus;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AddCommandDataUseCaseImpl implements AddCommandDataUseCase {
+public class AddDataUseCaseImpl implements AddCommandDataUseCase {
 
 	@Autowired
 	private CommandDataRepository commandDataRepository;

@@ -1,7 +1,6 @@
 package com.example.cqrs;
 
-import com.example.cqrs.infrastructure.adapters.in.commandbus.AddDataCommandDto;
-import com.example.cqrs.infrastructure.adapters.in.querybus.GetDataQueryDto;
+import com.example.cqrs.application.get.GetDataQueryDto;
 import com.example.cqrs.domain.ports.bus.CommandBus;
 import com.example.cqrs.domain.model.Data;
 import com.example.cqrs.domain.ports.bus.QueryBus;

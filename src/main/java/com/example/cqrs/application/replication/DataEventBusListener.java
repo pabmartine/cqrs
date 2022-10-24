@@ -1,5 +1,6 @@
-package com.example.cqrs.infrastructure.adapters.in.eventbus;
+package com.example.cqrs.application.replication;
 
+import com.example.cqrs.domain.bus.EventBusListener;
 import com.example.cqrs.domain.events.DataEvent;
 import com.example.cqrs.domain.model.Data;
 import com.example.cqrs.domain.ports.usecase.AddQueryDataUseCase;

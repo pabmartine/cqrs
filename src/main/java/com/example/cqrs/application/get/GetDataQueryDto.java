@@ -1,4 +1,4 @@
-package com.example.cqrs.infrastructure.adapters.in.querybus;
+package com.example.cqrs.application.get;
 
 import com.example.cqrs.domain.model.Data;
 import com.example.cqrs.domain.bus.Query;

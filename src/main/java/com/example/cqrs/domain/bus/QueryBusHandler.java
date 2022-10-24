@@ -1,4 +1,4 @@
-package com.example.cqrs.infrastructure.adapters.in.querybus;
+package com.example.cqrs.domain.bus;
 
 import com.example.cqrs.domain.bus.Query;
 

@@ -1,18 +1,21 @@
-package com.example.cqrs.application.usecase;
+package com.example.cqrs.application.get;
 
 import com.example.cqrs.domain.model.Data;
 import com.example.cqrs.domain.ports.repository.QueryDataRepository;
-import com.example.cqrs.domain.ports.usecase.AddQueryDataUseCase;
+import com.example.cqrs.domain.ports.usecase.FindQueryDataUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
-public class AddQueryDataUseCaseImpl implements AddQueryDataUseCase {
+public class GetDataUseCaseImpl implements FindQueryDataUseCase {
 
 	@Autowired
 	private QueryDataRepository queryDataRepository;
 
-	public void add(Data queryData) throws Exception {
-		queryDataRepository.save(queryData);
+	@Override
+	public Optional<Data> findById(String id) {
+		return queryDataRepository.findById(id);
 	}
 }

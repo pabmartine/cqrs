@@ -1,4 +1,4 @@
-package com.example.cqrs.infrastructure.adapters.in.eventbus;
+package com.example.cqrs.domain.bus;
 
 import com.example.cqrs.domain.bus.Event;
 import lombok.extern.slf4j.Slf4j;
